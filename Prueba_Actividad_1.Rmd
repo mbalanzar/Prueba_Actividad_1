@@ -1,0 +1,51 @@
+---
+title: "Prueba_Actividad_1"
+author: "Mar Balanzá Rodríguez"
+date: "2024-03-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Resolución de la actividad 1.1
+
+### Resolución de la actividad 1.2
+
+```{r actividad_1.2}
+# Si no se dispone del paquete "GEOquery"
+if (!require("GEOquery")){
+  # Instala el paquete "GEOquery"
+  BiocManager::install("GEOquery")
+}
+# Carga el paquete "GEOquery"
+library("GEOquery")
+# Crea un objetos GDS que albergue el DataSet sugerido en el ejercicio
+GDS2294<-getGEO(GEO="GDS2294", destdir=getwd(), AnnotGPL=TRUE)
+# Número total de muestras consideradas en el DataSet
+Meta(GDS2294)$sample_count
+# Muestras consideradas dentro de este DataSet
+Meta(GDS2294)$sample_id
+# Plataforma utilizada para el análisis de las siguientes muestras
+Meta(GDS2294)$platform
+# Nombres de las variables consideradas en la tabla de 
+names(Columns(GDS2294))
+# Cabecera de la tabla de datos fenotípicos asociada a este DataSet
+head(Columns(GDS2294))
+# Muestras de cada tipo incluidas en el estudio
+table(Columns(GDS2294)$"genotype/variation")
+# Diagrama de barras de la variable "genotype/variation"
+barplot(table(Columns(GDS2294)$"genotype/variation"), col=palette.colors(n=2, palette="Pastel 1"), cex.axis=0.9, cex.names=0.9, ylim=c(0,4))
+# Convierte el objeto GDS a un objeto de tipo ExpressionSet
+expr_GDS2294<-GDS2eSet(GDS2294)
+# Dimensiones de la matriz de expresión
+dim(exprs(expr_GDS2294))
+# Cabecera de la matriz de expresión
+head(exprs(expr_GDS2294))
+# Dimensiones de la matriz de datos fenotípicos
+dim(pData(expr_GDS2294))
+# Cabecera de la matriz de datos fenotípicos
+head(pData(expr_GDS2294))
+# Verifica que las filas de la matriz de datos fenotípicos se corresponden con las columnas de la matriz de expresión
+all(rownames(pData(expr_GDS2294))==colnames(exprs(expr_GDS2294)))
