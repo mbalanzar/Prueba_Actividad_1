@@ -9,11 +9,32 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Resolución de la actividad 1.1
+### Resolución de la pregunta 1
 
-### Resolución de la actividad 1.2
+Actualmente, estoy cursando el primer año de mi tesis que versa sobre las DHR, que incluyen la retinosis pigmentaria. Esta circunstancia ha condicionado mi elección del artículo de González-del Pozo *et al*. (2020), dado que he optado por una propuesta que se asemeja a mi propio proyecto de tesis.
 
-```{r actividad_1.2}
+- __Título__: *Unmasking Retinitis Pigmentosa complex 
+cases by a whole genome sequencing algorithm 
+based on open‑access tools: hidden recessive 
+inheritance and potential oligogenic variants*
+- __Referencia del artículo (DOI)__: [10.1186/s12967-020-02258-3](https://doi.org/10.1186/s12967-020-02258-3)
+- __Objetivo y ámbito de aplicación__: Diagnóstico molecular de distrofias de la retina (DHR). Aplicación en clínica.
+- __Tecnología ómica empleada__: *Whole Genome Sequencing* (Genómica)
+- __Abstract__: *Retinitis Pigmentosa (RP) is a clinically and genetically heterogeneous disorder that results in inherited blindness. Despite the large number of genes identified, only 60% of cases receive a genetic diagnosis using targeted-sequencing. The aim of this study was to design a whole genome sequencing (WGS) based approach to increase the diagnostic yield of complex Retinitis Pigmentosa cases.*
+
+- __Adecuación de la tecnología ómica a los objetivos del proyecto__
+
+    Las DHR son un conjunto de trastornos caracterizados por la muerte, generalmente, progresiva de fotorreceptores y células del epitelio pigmentario, conllevando un pérdida de la función visual. Esta última puede desembocar en la ceguera legal. Las DHR están catalogadas como enfermedades raras, puesto que su prevalencia oscila entre 1:3000 y 1:4000 personas. Aunque, son la primera causa de ceguera entre niños y adultos jóvenes.
+
+    Estas patologías se caracterizan por su enorme heterogeneidad clínica y genética. A este respecto, hasta la fecha, se han descrito 280 genes asociados a las DHR. El advenimiento de la secuenciación masiva (en inglés *Next Generation Sequencing*) ha supuesto un gran avance de cara al incremento del porcentaje de diagnóstico molecular. No obstante, aún restan muchos pacientes a la espera de recibir su diagnóstico genético, que permitiría: a) la confirmación de la sospecha clínica, b) el asesoramiento genético y reproductivo de las familias y c) la inclusión en ensayos clínicos basados en la terapia génica.
+
+    A modo de referencia, en mi grupo de investigación, se ha estudiado a más de 260 familias españolas mediante múltiples versiones de un panel de genes (que no es otra cosa que un custom microarray), alcanzándose un porcentaje diagnóstico de alrededor del 65%. El artículo de García-Bohórquez *et al.* (2021) que he adjuntado es un ejemplo de una publicación derivada de la aplicación de una estrategia de *target sequencing*.
+
+    El estudio de un panel de genes presenta claras limitaciones, ya que ni podemos detectar variantes en nuevos genes candidatos ni examinar las variantes estructurales o aquellas que recaen en regiones no codificantes. Como resultado, los estudios del exoma completo (*Whole Exome Sequencing*) o del genoma completo (*Whole Genome Sequencing*) se emplean cada vez más para resolver los casos que permanecen sin diagnóstico tras el análisis inicial con un panel de genes. De hecho, este razonamiento queda reflejado en la discusión planteada por González-del Pozo *et al.* (2020).
+
+### Resolución de la pregunta 2
+
+```{r pregunta_2}
 # Si no se dispone del paquete "GEOquery"
 if (!require("GEOquery")){
   # Instala el paquete "GEOquery"
